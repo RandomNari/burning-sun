@@ -15,6 +15,9 @@ repositories {
 }
 
 loom {
+
+    accessWidenerPath = file("src/main/resources/burning.sun.random.nari.classtweaker")
+
 	splitEnvironmentSourceSets()
 
 	mods {

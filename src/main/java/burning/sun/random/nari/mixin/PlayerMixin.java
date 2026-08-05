@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.attribute.EnvironmentAttributes;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
@@ -23,6 +24,10 @@ public class PlayerMixin {
     @Inject(method = "aiStep", at = @At("TAIL"))
     public void burnUndead(CallbackInfo ci) {
         Player player = (Player) (Object) this;
+        if(!player.level().isClientSide() && player.tickCount== 1)
+        {
+            player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 60 * 20, 0,false, false,false));
+        }
         if (isSunBurnTick()) {
             player.igniteForSeconds(8.0F);
         }
