@@ -3,7 +3,8 @@
 	"package": "burning.sun.random.nari.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"PlayerMixin"
+		"PlayerMixin",
+      "WorldPresetsMixin"
 	],
 
 	"injectors": {

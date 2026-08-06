@@ -3,7 +3,6 @@
 	"id": "burning-sun",
 	"version": "${version}",
 	"name": "Burning Sun",
-    "accessWidener": "burning.sun.random.nari.classtweaker",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
 		"Me!"
